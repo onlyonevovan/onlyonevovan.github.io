@@ -1,0 +1,31 @@
+<script>
+const images = ["assets/i.png",
+"assets/j.png", 
+"assets/l.png",
+"assets/o.png",
+"assets/s.png",
+"assets/t.png",
+"assets/z.png"
+];
+
+document.addEventListener('DOMContentLoaded', _ => {
+  const randImageIndex = ~~(Math.random() * images.length);
+  document.getElementById('randImg').src = images[randImageIndex];
+});
+</script>
+<html>
+	<body>
+		<div style="color: #f9eed2">.</div>
+		<div style="color: #f9eed2">.</div>
+		<div style="color: #f9eed2">.</div>
+		<img id="randImg" src="" width="160" height="160" alt="beef"></img>
+		<div>
+			<input type="image" src="assets/i.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+			<input type="image" src="assets/j.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+			<input type="image" src="assets/l.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+			<input type="image" src="assets/o.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+			<input type="image" src="assets/s.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+			<input type="image" src="assets/t.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+			<input type="image" src="assets/z.png" width="160" height="160" ondblclick="location.href='tetris.html';"/>
+	</body>
+</html>
