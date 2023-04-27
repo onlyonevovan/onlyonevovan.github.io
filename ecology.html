@@ -3,6 +3,15 @@
 <head>
     <title>Посадка деревьев</title>
     <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+        center {
+            padding-top: 10px; 
+            font-family: 'Montserrat', sans-serif; 
+            color: white;
+            font-size: 20px;
+        }
+
         html, body {
             height: 100%;
         }
@@ -12,20 +21,33 @@
         }
     </style>
     <script type="text/javascript">
+        var forests = 0;
+        var trees = 0;
+        var message = document.createElement("center");
+
         document.addEventListener("mousedown", function (event) {
+            if (trees == 10) {
+                for (var i= document.images.length; i-->0;)
+                    document.images[i].parentNode.removeChild(document.images[i]);
+                forests++;
+                trees = 0;
+                message.innerText = "Вы посадили " + forests + " лес(a)";   
+            }
             var x = event.clientX;
             var y = event.clientY;
 
             var treeImg = document.createElement("img");
-            treeImg.src = "https://free-png.ru/wp-content/uploads/2022/07/free-png.ru-925.png";
+            treeImg.src = "https://i.ibb.co/hYkGXB0/image-48.png";
             treeImg.classList.add("treeImg");
             treeImg.style.left = x + "px";
             treeImg.style.top = y + "px";
+            trees++;
 
             document.body.appendChild(treeImg);
+            document.body.appendChild(message);
         });
     </script>
 </head>
-<body style="background-image: url('https://img.freepik.com/premium-vector/seamless-texture-cartoon-grass-green-plants-pattern-for-wallpaper-illustration-backdrop-organic-background-for-the-game-gui_172107-1619.jpg');">
+<body style="background-image: url('https://media.istockphoto.com/id/865924416/vector/cartoon-grass.jpg?s=612x612&w=0&k=20&c=fwF4vmEDWJEDMce3WbLQTHTxfuOVylyFsBC3PqqGnbo=');">
 </body>
 </html>
