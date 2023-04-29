@@ -45,13 +45,24 @@
                     document.images[i].parentNode.removeChild(document.images[i]);
                 forests++;
                 trees = 0;
-                message.innerText = "Вы посадили " + forests + " лес(a)";   
+                if (forests > 4 && forests < 21) {
+                    message.innerText = "Вы посадили " + forests + " лесов";   
+                } else {
+                    if (forests.toString().endsWith(1)) {
+                        message.innerText = "Вы посадили " + forests + " лес";   
+                    } else if (forests.toString().endsWith(2) || forests.toString().endsWith(3)
+                               || forests.toString().endsWith(4)) {
+                        message.innerText = "Вы посадили " + forests + " леса";   
+                    } else {
+                        message.innerText = "Вы посадили " + forests + " лесов"; 
+                    }
+                }
             }
             var x = event.clientX;
             var y = event.clientY;
 
             var treeImg = document.createElement("img");
-            treeImg.src = "https://i.ibb.co/hYkGXB0/image-48.png";
+            treeImg.src = "https://i.ibb.co/WpTspMg/ce-Cyq-Us-M-4x.png";
             treeImg.classList.add("treeImg");
             treeImg.style.left = x + "px";
             treeImg.style.top = y + "px";
